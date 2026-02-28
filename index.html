@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Denim Editorial Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Libre+Franklin:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+/* MOVING DENIM BACKGROUND */
+
+body{
+font-family:"Libre Franklin", sans-serif;
+color:#111;
+
+background-image:url("denim-texture.jpg");
+background-size:500px;
+animation:denimMove 40s linear infinite;
+}
+
+@keyframes denimMove{
+0%{background-position:0 0;}
+100%{background-position:600px 600px;}
+}
+
+/* HEADER */
+
+header{
+padding:40px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.9);
+}
+
+.logo{
+font-family:"Playfair Display", serif;
+font-size:42px;
+letter-spacing:6px;
+}
+
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#111;
+font-size:14px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+/* HERO */
+
+.hero{
+height:90vh;
+background:url("hero.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.hero-text{
+background:rgba(255,255,255,0.85);
+padding:35px 70px;
+}
+
+.hero-text h1{
+font-family:"Playfair Display", serif;
+font-size:64px;
+letter-spacing:4px;
+}
+
+/* SECTIONS */
+
+.section{
+padding:100px 12%;
+background:rgba(255,255,255,0.94);
+}
+
+.section-title{
+font-family:"Playfair Display", serif;
+font-size:40px;
+text-align:center;
+margin-bottom:70px;
+letter-spacing:3px;
+}
+
+/* GRID — 2 PER ROW */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:35px;
+}
+
+.grid img{
+width:100%;
+height:340px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.grid img:hover{
+transform:scale(1.03);
+opacity:0.9;
+}
+
+/* SCROLL ANIMATION */
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.9s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ABOUT */
+
+.about{
+max-width:750px;
+margin:auto;
+text-align:center;
+font-size:18px;
+line-height:1.8;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+font-size:18px;
+}
+
+footer{
+padding:40px;
+text-align:center;
+background:white;
+margin-top:60px;
+}
+
+@media(max-width:800px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.hero-text h1{
+font-size:42px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">YOUR NAME</div>
+
+<nav>
+<a href="#portfolio">Portfolio</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text hidden">
+<h1>Denim Editorial</h1>
+</div>
+
+</section>
+
+<section id="portfolio" class="section">
+
+<h2 class="section-title hidden">Selected Work</h2>
+
+<div class="grid">
+
+<img class="hidden" src="fashion1.jpg">
+<img class="hidden" src="fashion2.jpg">
+
+<img class="hidden" src="fashion3.jpg">
+<img class="hidden" src="fashion4.jpg">
+
+<img class="hidden" src="fashion5.jpg">
+<img class="hidden" src="fashion6.jpg">
+
+<img class="hidden" src="fashion7.jpg">
+<img class="hidden" src="fashion8.jpg">
+
+<img class="hidden" src="fashion9.jpg">
+<img class="hidden" src="fashion10.jpg">
+
+<img class="hidden" src="fashion11.jpg">
+<img class="hidden" src="fashion12.jpg">
+
+<img class="hidden" src="fashion13.jpg">
+<img class="hidden" src="fashion14.jpg">
+
+<img class="hidden" src="fashion15.jpg">
+<img class="hidden" src="fashion16.jpg">
+
+<img class="hidden" src="fashion17.jpg">
+<img class="hidden" src="fashion18.jpg">
+
+<img class="hidden" src="fashion19.jpg">
+<img class="hidden" src="fashion20.jpg">
+
+</div>
+
+</section>
+
+<section id="about" class="section">
+
+<h2 class="section-title hidden">About</h2>
+
+<div class="about hidden">
+
+Fashion creative exploring **denim culture, editorial storytelling and contemporary streetwear aesthetics**.  
+My work focuses on texture, movement and modern silhouettes inspired by urban fashion.
+
+</div>
+
+</section>
+
+<section id="contact" class="section">
+
+<h2 class="section-title hidden">Contact</h2>
+
+<div class="contact hidden">
+
+Email: yourname@email.com  
+<br><br>
+Instagram: @yourname
+index.html
+hero.jpg
+fashion1.jpg
+fashion2.jpg
+...
+fashion20.jpg
+denim-texture.jpg
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Your Name
+
+</footer>
+
+<script>
+
+/* SCROLL FADE-IN */
+
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach((entry)=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach((el)=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
