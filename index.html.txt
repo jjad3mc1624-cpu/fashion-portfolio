@@ -1,0 +1,7 @@
+index.html
+hero.jpg
+fashion1.jpg
+fashion2.jpg
+...
+fashion20.jpg
+denim-texture.jpg
